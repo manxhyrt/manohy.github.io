@@ -1,0 +1,840 @@
+/***************** Variables globales *******************/
+:root {
+  --primary-color: #3A7CA5;
+  --secondary-color: #16425B;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+/***************** Style général *******************/ 
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+section {
+  padding: 80px 0;
+  position: relative;
+  margin-bottom: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+}
+
+section h2 {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+/***************** Style en-tête *******************/ 
+.head {
+  background-color: #16425B;
+  padding: 60px 0;
+  color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.head h1 {
+  margin-bottom: 15px;
+}
+
+/***************** Style pied-de-page *******************/ 
+footer.footer {
+  background-color: #16425B;
+  padding: 30px 0;
+  color: white;
+  width: 100%;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+/**************** NAV BAR *************************/
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/**************** CSS presentation ****************/
+.text_presentation {
+  flex: 2;
+  text-align: justify;
+}
+
+.img_pdp {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.img_pdp img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+/****************** CSS Etude *******************/
+.education {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.education::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background: var(--primary-color);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.education-item {
+  width: 100%;
+  margin: 60px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.education-item .content {
+  width: 45%;
+  padding: 25px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.education-item:nth-child(odd) .content {
+  margin-right: 55%;
+}
+
+.education-item:nth-child(even) .content {
+  margin-left: 55%;
+}
+
+.education-item .image-etude {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.education-item:nth-child(odd) .image-etude {
+  right: calc(45% - 40px);
+}
+
+.education-item:nth-child(even) .image-etude {
+  left: calc(45% - 40px);
+}
+
+.education-item .image-etude img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Point sur la timeline */
+.education-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.image-etude {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-etude img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+/****************** CSS travail *******************/
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+.work-item .card {
+  border: none;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.work-item .card-body {
+  padding: 30px;
+}
+
+.card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.work-content {
+  display: flex;
+  gap: 50px;
+  align-items: stretch;
+}
+
+.work-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.work-info-content {
+  margin-bottom: 30px;
+}
+
+.work-image {
+  width: 250px;
+  margin: 30px auto;
+}
+
+.work-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.mission-details {
+  flex: 1;
+  padding: 0;
+  background: transparent;
+}
+
+.mission-item {
+  background: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.mission-item:hover {
+  transform: translateX(10px);
+}
+
+.mission-item h6 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mission-item i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.work-item .card-title {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.work-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/*************** CSS Langue ******************/
+#Langue .card {
+  width: 300px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+#Langue .list-group-item {
+  transition: var(--transition);
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+/*************** CSS projet ******************/
+#projects .card {
+  height: 100%;
+}
+
+#projects .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+#projects .card-title {
+  font-size: 1.2rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects .card-text {
+  height: 200px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/************* CSS Competences **************/
+#skills {
+  background: transparent;
+  box-shadow: none;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.skills-section {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.skills-section h3 {
+  color: #023047;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skill-item {
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Couleurs pour les différentes catégories */
+.languages-item {
+  background-color: #023047;
+  color: white;
+}
+
+.languages-item:hover {
+  background-color: #415a77;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(2, 48, 71, 0.2);
+}
+
+.software-item {
+  background-color: #d6ccc2;
+  color: #023047;
+  border: 2px solid #d6ccc2;
+}
+
+.software-item:hover {
+  background-color: #fcbf49;
+  border-color: #fcbf49;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(252, 191, 73, 0.2);
+}
+
+.personal-item {
+  background-color: #780000;
+  color: white;
+}
+
+.personal-item:hover {
+  background-color: #5c0000;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(120, 0, 0, 0.2);
+}
+
+#competences h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #023047;
+  position: relative;
+}
+
+#competences h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #fcbf49;
+}
+
+/************* CSS Contacts **************/
+
+#contact {
+  padding: 20px 0;
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Langues */
+.languages-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.language-item {
+  text-align: center;
+  padding: 20px;
+  min-width: 150px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.language-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Formulaire de contact */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--secondary-color);
+}
+
+/* À propos */
+#about h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  section {
+    padding: 60px 20px;
+  }
+
+  .work-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mission-details {
+    width: 100%;
+  }
+
+  .work-image {
+    width: 200px;
+  }
+
+  .skills-container {
+    padding: 15px;
+  }
+
+  .skills-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-item {
+    font-size: 1rem;
+  }
+
+  #competences h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .skills-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education::before {
+    left: 20px;
+  }
+
+  .education-item {
+    margin: 40px 0;
+  }
+
+  .education-item .content {
+    width: calc(100% - 80px);
+    margin-left: 80px !important;
+  }
+
+  .education-item .image-etude {
+    left: 20px !important;
+    width: 60px;
+    height: 60px;
+  }
+
+  .education-item::after {
+    left: 20px;
+  }
+
+  .work-content {
+    gap: 20px;
+  }
+
+  .work-info, .mission-details {
+    width: 100%;
+  }
+
+  .mission-item {
+    margin-bottom: 15px;
+  }
+
+  .skills-container {
+    padding: 15px;
+  }
+
+  .skills-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-item {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  #competences h2 {
+    font-size: 2rem;
+  }
+
+  .languages-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .language-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* À propos responsive */
+  #about .row {
+    flex-direction: column;
+  }
+
+  .img_pdp {
+    order: -1; /* Met l'image en premier */
+    margin-bottom: 30px;
+  }
+
+  .img_pdp img {
+    max-width: 200px;
+  }
+
+  /* Compétences responsive */
+  .skills-container {
+    gap: 30px;
+  }
+
+  .skills-list {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .education-item .content {
+    padding: 15px;
+  }
+
+  .mission-item {
+    padding: 15px;
+  }
+
+  .work-image {
+    width: 150px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .img_pdp img {
+    max-width: 150px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-container {
+    padding: 20px 15px;
+  }
+
+  .skills-list div {
+    padding: 12px 15px;
+  }
+}
+
+/* Projets */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project-item {
+    position: relative;
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Style spécifique pour l'image du portefeuille */
+img[src*="portefeuille"] {
+    filter: blur(4px);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(22, 66, 91, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-title {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-description {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-tools {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .project-item {
+        height: 350px;
+    }
+
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .skills-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        height: 300px;
+    }
+
+    .project-overlay {
+        padding: 30px;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .skills-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-item {
+        height: 250px;
+    }
+
+    .project-overlay {
+        padding: 20px;
+    }
+}
